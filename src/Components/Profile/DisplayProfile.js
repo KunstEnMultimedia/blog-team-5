@@ -1,0 +1,21 @@
+const DisplayProfile = (props) => {
+    return (
+        <div className="bg-white w-7/12 rounded-xl">
+        <img src={props.data.thumbnail} className="rounded-t-xl"/>
+        <h6>{props.data.category}</h6>
+        <h2>{props.data.title}</h2>
+        <p>{props.data.content}</p>
+        <div>
+            <img className="object-cover rounded-full w-14 h-14" src={props.data.profilePic}/>
+            <div>
+                <p>{props.data.username}</p>
+                <p>{props.data.class}</p>
+            </div>
+        </div>
+    </div>
+    )
+    
+}
+
+export default DisplayProfile
+

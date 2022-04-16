@@ -1,19 +1,3 @@
-// module.exports = {
-//   content: [
-//     "./src/**/*.{js,jsx,ts,tsx}",
-//   ],
-//   extend: {
-//     theme: {
- 
-//     },
-//     colors: {
-//       'coolBlue' : '#1fb6ff'
-//     },
-//   },
-  
-//   plugins: [],
-// }
-
 module.exports = {
   content: [
       './src/**/*.{js,jsx,ts,tsx}',
@@ -21,13 +5,14 @@ module.exports = {
   theme: {
       extend: {
           colors:{
-          'white' : '#FFFFFF', //? Hebben we dit nodig?
-          'black' : '#000000', //? Hebben we dit nodig?
-          'gray' : '#6d7f8c',
-          'mint' : '#a4c9d9',
-          'blue' : '#2b86bf',
-          'sky-blue' : '#84a9d9',
-          'purple' : '#6f73bf',
+          'white' : '#FFFFFF',
+          'black' : '#000000',
+          'creme' : '#F2E5D5',
+          'pink' : '#F27DB4',
+          'blue' : '#04B1D9',
+          'orange' : '#F19444',
+          'red' : '#F15430'
+
           },
           fontFamily: {
               'barlow': ['Barlow', 'sans-serif'],
@@ -46,13 +31,11 @@ module.exports = {
               'caption' : ['14px', '17px'],
           },
           backgroundImage: { //TODO: add images to folder and list them here
-              // 'cover' : "url('/src/img/cover.png')",
+              'homeImg' : "url('/src/images/good.png')",
           },
           borderRadius: {
               'none': '0',
               'sm': '0.125rem',
-              // DEFAULT: '0.25rem',
-              // DEFAULT: '4px',
               'md': '0.375rem',
               'lg': '0.5rem',
               'full': '9999px',
