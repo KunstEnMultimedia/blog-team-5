@@ -24,23 +24,23 @@ const ReturnPosts = (props) => {
         getData()
     },[])
 
-
     const returnData = () => {
 
         if (jsonData.posts != null){
-
             return jsonData.posts.map((data, i) => {
                 return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
             })
         }
     }
    
-    return (<section className="container mx-auto gap-5 flex flex-wrap justify-evenly">
-
+    return (<section className="container mx-auto  flex flex-wrap justify-evenly">
             <nav className="h-28 w-screen flex justify-center items-center">
                 <h1 className="text-pink text-heading3 font-bold w-1/6">ACTUEEL</h1>
             </nav>
             {returnData()}
+            <div className="w-full h-44 flex justify-center items-center">
+                <Link to="/"><button className="w-52 h-12 bg-pink rounded-md font-barlow">LEES MEER</button></Link>              
+            </div>
         </section>)
     
     

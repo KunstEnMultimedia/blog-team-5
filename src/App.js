@@ -4,6 +4,7 @@ import HomePage from './Components/Home/HomePage';
 import DisplayProfile from './Components/Profile/DisplayProfile';
 import ProfilePage from './Components/Profile/ProfilePage';
 import ReturnProfile from './Components/Profile/ReturnProfile';
+import ProgramPage from './Components/Program/ProgramPage';
 function App() {
   
     const [profileId, setProfileId] = useState('');
@@ -16,8 +17,9 @@ function App() {
     return (
     <>
         <Routes>
-            <Route path="/" element={<HomePage setProfileId={setProfileId}/>}/>
-            <Route path="/profile" element={<ProfilePage profileId={profileId}/>}/>
+            <Route path="/" element={<HomePage setProfileId={setProfileId} profileId={profileId}/>}/>
+            <Route path="/profile" element={<ProfilePage profileId={profileId} setProfileId={setProfileId}/>}/>
+            <Route path="/programma" element={<ProgramPage/>}/>
         </Routes>
     </>)
 }

@@ -16,6 +16,7 @@ module.exports = {
           },
           fontFamily: {
               'barlow': ['Barlow', 'sans-serif'],
+              'montserrat' : ['Montserrat' , ]
           },
           fontSize: { //.INFO_template: 'name' : ['fontSize', 'lineHeight'],
               'heading1' : ['96px', '115px'],
@@ -40,6 +41,18 @@ module.exports = {
               'lg': '0.5rem',
               'full': '9999px',
               'large': '15px',
+          },
+          height: {
+              '120': '120vh',
+              '130': '130vh',
+              '140': '140vh',
+              '35%' : '35%',
+              '36rem' : '36rem',
+              '19rem' : '19rem',
+          },
+          width: {
+              '86' : '22rem',
+              '60rem' : '60rem',
           },
       },
   },

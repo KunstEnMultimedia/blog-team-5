@@ -1,5 +1,6 @@
 import DisplayProfile from "./DisplayProfile";
 import { useState, useEffect } from "react";
+import Recommended from "./Recommended";
 
 const ReturnProfile = (props) => {
     
@@ -23,7 +24,6 @@ const ReturnProfile = (props) => {
             getData()
         },[])
     
-    
         const returnData = () => {
     
             if (profileData.posts != null){
@@ -32,12 +32,13 @@ const ReturnProfile = (props) => {
                     if (localStorage.getItem('personProfile') == i){
                         return <DisplayProfile data={data} key={i}/>  
                     }
-                     
                 })
             }
         }
 
-        return (<>{returnData()}</>)
+        return (<>
+        {returnData()}
+        </>)
 }
 
 export default ReturnProfile
