@@ -1,15 +1,15 @@
 {
     "program": [
  {
-    "id" : 0,
-    "title": "Learn how to skate",
-    "thumbnail" : "https://images.pexels.com/photos/6775228/pexels-photo-6775228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "id" : 1,
+    "title": "Learn how to skate ",
+    "thumbnail" : "https://images.pexels.com/photos/1996968/pexels-photo-1996968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "date" : "21/6/2022",
     "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus.",
     "category" : "Workshop"
   },
   {
-    "id" : 1,
+    "id" : 2,
     "title": "Bevrijdings Festival is coming!",
     "thumbnail" : "https://images.pexels.com/photos/1540343/pexels-photo-1540343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "date" : "21/6/2022",
@@ -17,7 +17,31 @@
     "category" : "Festival"
   },
   {
-    "id" : 2,
+    "id" : 3,
+    "title": "Climate protest",
+    "thumbnail" : "https://images.pexels.com/photos/3039036/pexels-photo-3039036.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "date" : "21/6/2022",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus.",
+    "category" : "Protest"
+  },
+  {
+    "id" : 4,
+    "title": "Learn how to skate",
+    "thumbnail" : "https://images.pexels.com/photos/6775228/pexels-photo-6775228.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "date" : "21/6/2022",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus.",
+    "category" : "Workshop"
+  },
+  {
+    "id" : 5,
+    "title": "Rock Concert!",
+    "thumbnail" : "https://images.pexels.com/photos/3807093/pexels-photo-3807093.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "date" : "21/6/2022",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus.",
+    "category" : "Concert"
+  },
+  {
+    "id" : 6,
     "title": "Harry Styles in Amsterdam",
     "thumbnail" : "https://images.pexels.com/photos/2247677/pexels-photo-2247677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "date" : "21/6/2022",

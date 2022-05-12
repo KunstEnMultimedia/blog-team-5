@@ -12,8 +12,8 @@ const HeaderPage = (props) => {
 
     return (<section className="bg-creme">
         <Welcome/>
-        <ReturnPosts setProfileId={props.setProfileId}/>
-        <Programma/>
+        <ReturnPosts setProfileId={props.setProfileId} />
+        <Programma programId={props.programId} setProgramId={props.setProgramId}/>
     </section>)
 }
 

@@ -11,8 +11,8 @@ module.exports = {
           'pink' : '#F27DB4',
           'blue' : '#04B1D9',
           'orange' : '#F19444',
-          'red' : '#F15430'
-
+          'red' : '#F15430',
+          'darkred' : '#F04119'
           },
           fontFamily: {
               'barlow': ['Barlow', 'sans-serif'],
@@ -33,6 +33,8 @@ module.exports = {
           },
           backgroundImage: { //TODO: add images to folder and list them here
               'homeImg' : "url('/src/images/good.png')",
+              'searchIcon' : "url('/src/images/search.png')",
+              'closeIcon' : "url('/src/images/close.svg')"
           },
           borderRadius: {
               'none': '0',
@@ -48,13 +50,51 @@ module.exports = {
               '140': '140vh',
               '35%' : '35%',
               '36rem' : '36rem',
+              '40rem' : '40rem',
               '19rem' : '19rem',
+              '80vh' : '80vh',
+              '60vh' : '60vh',
           },
           width: {
               '86' : '22rem',
               '60rem' : '60rem',
           },
+          screens: {
+            'xs': '440px',
+            'sm': '640px',
+      
+            'md': '768px',
+      
+            'lg': '1024px',
+      
+            'xl': '1280px',
+      
+            '2xl': '1536px',
+
+            '2xlMax': {'max': '1535px'},
+    
+            'xlMax': {'max': '1279px'},
+
+            'lgMax': {'max': '1023px'},
+
+            'mdMax': {'max': '767px'},
+            'midMax': {'max': '890px'},
+
+            'smMax': {'max': '639px'},
+            'xsMax': {'max': '480px'},
+
+            'smMid': {'min': '640px', 'max': '767px'},
+
+            'midMid': {'min': '640px', 'max': '1023px'},
+            'mdMid': {'min': '768px', 'max': '1023px'},
+
+            'lgMid': {'min': '1024px', 'max': '1279px'},
+
+            'xlMid': {'min': '1280px', 'max': '1535px'},
+            
+            '2xlMin': {'min': '1536px'},
+            }
+        //   }
       },
   },
-  plugins: [],
 }

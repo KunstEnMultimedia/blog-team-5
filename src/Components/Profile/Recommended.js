@@ -37,15 +37,14 @@ const Recommended = (props) => {
             
             let filteredArr = randomGenerator(recData.posts, 3);
             return filteredArr.map((data, i) => {
-
                 return <DisplayRecommended data={data} key={i} setProfileId={props.setProfileId} index={data.id}/>                   
             })
         }
     }
     return (<section className="bg-blue">
         <div className="container mx-auto w-9/12 ">
-        <h1 className="font-bold font-barlow text-heading3 w-full h-28 flex items-center">Lees meer blogs</h1>
-            <div className="flex justify-between flex-row">
+        <h1 className="font-bold font-barlow text-heading3 w-full h-28 flex items-center lgMax:flex-col text-center">Lees meer blogs</h1>
+            <div className="flex justify-between flex-row lgMax:flex-col lgMax:items-center">
             {returnRecommended()}
             </div>
            

@@ -29,7 +29,7 @@ const ReturnProfile = (props) => {
             if (profileData.posts != null){
     
                 return profileData.posts.map((data, i) => {
-                    if (localStorage.getItem('personProfile') == i){
+                    if (localStorage.getItem('personProfile') == data.id){
                         return <DisplayProfile data={data} key={i}/>  
                     }
                 })

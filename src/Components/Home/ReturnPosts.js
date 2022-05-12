@@ -25,17 +25,21 @@ const ReturnPosts = (props) => {
     },[])
 
     const returnData = () => {
-
+       
         if (jsonData.posts != null){
-            return jsonData.posts.map((data, i) => {
-                return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
+            return jsonData.posts.map((data, i) => { 
+                if (i < 9 && jsonData.posts.length >= 9){
+                    return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
+                } else if (jsonData.posts.length < 9){
+                    return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/> 
+                }
             })
         }
     }
    
     return (<section className="container mx-auto  flex flex-wrap justify-evenly">
             <nav className="h-28 w-screen flex justify-center items-center">
-                <h1 className="text-pink text-heading3 font-bold w-1/6">ACTUEEL</h1>
+                <h1 className="text-pink text-heading3 font-bold w-1/6 midMax:w-full midMax:text-center">ACTUEEL</h1>
             </nav>
             {returnData()}
             <div className="w-full h-44 flex justify-center items-center">

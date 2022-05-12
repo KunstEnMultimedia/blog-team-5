@@ -13,11 +13,11 @@ const ProfilePage = (props) => {
       },[props.profileId]);
 
       
-    return (<>
+    return (<section>
     <NavBar/>
         <ReturnProfile profileId={props.profileId} setProfileId={props.setProfileId}/>
         <Recommended profileId={props.profileId} setProfileId={props.setProfileId}/>
-    </>)
+    </section>)
 }
 
 export default ProfilePage

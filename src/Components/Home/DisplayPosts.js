@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 const DisplayPosts = (props) => {
 
     return (
-        <div className="bg-white w-86 mb-9 rounded-xl">
+        <div className="bg-white w-86 mb-9 rounded-xl 2xl:w-3/12 2xl:mx-1 ">
             <img src={props.data.thumbnail} className="rounded-t-xl h-35% w-full object-cover "/>
-                <Link to="/profile" className="flex justify-between flex-col h-96 w-10/12 mx-auto" onClick={() => {props.setProfileId(props.index)}}>
+                <Link to="/profile" className="flex justify-between flex-col h-96 w-10/12 mx-auto" onClick={() => {props.setProfileId(props.data.id)}}>
                     <div className="mt-4">
                         <div className="mb-2">
                             <h5 className="font-barlow font-bold text-red">{props.data.category}</h5>

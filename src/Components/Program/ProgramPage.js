@@ -1,10 +1,12 @@
 import NavBar from "../Home/NavBar"
+import ReturnProgramData from "./ReturnProgramData"
 
-const ProgramPage = () => {
+const ProgramPage = (props) => {
 
-    return <>
+    return <section className="bg-creme h-screen">
         <NavBar/>
-    </>
+        <ReturnProgramData setProgramId={props.setProgramId}/>
+    </section>
 }
 
 export default ProgramPage
