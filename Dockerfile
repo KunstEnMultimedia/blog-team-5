@@ -15,7 +15,7 @@ RUN npm install
 RUN npm i -g serve
 
 # Copy files to working directory
-COPY ./frontend .
+COPY ./ .
 
 # Build react app
 RUN npm run build
