@@ -1,0 +1,6 @@
+.github/
+
+Dockerfile
+
+node_modules/
+build/
