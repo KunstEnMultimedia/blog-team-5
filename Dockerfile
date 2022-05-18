@@ -21,4 +21,4 @@ COPY ./ .
 RUN npm run build
 
 # Serve app
-ENTRYPOINT [ "serve", "-s", "build", "-l", "80" ]
+ENTRYPOINT [ "npx", "serve", "-s", "build", "-l", "80" ]
