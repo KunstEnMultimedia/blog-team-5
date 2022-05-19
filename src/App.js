@@ -34,7 +34,7 @@ function App() {
             <Route path="/programma" element={<ProgramPage programId={programId} setProgramId={setProgramId}/>}/>
             <Route path="/programma_post" element={<ProgramPostPage programId={programId} setProgramId={setProgramId}/>}/>
             <Route path="/info" element={<InfoPage/>}/>
-            <Route path="/nieuws" element={<NewsPage/>}/>
+            <Route path="/nieuws" element={<NewsPage setProfileId={setProfileId}/>}/>
             <Route path="/search" element={<SearchPage setProgramId={setProgramId} setProfileId={setProfileId}/>}/>
         </Routes>
     </>)

@@ -28,7 +28,7 @@ const ProgramPost = (props) => {
         if (programData.program != null){
         return programData.program.map((data, i ) => {
             if (localStorage.getItem('programId') == data.id){
-                return <DisplayProgramPost data={data} key={i} setProgramData={props.setProgramData}/>
+                return <DisplayProgramPost data={data} key={i} setProgramData={props.setProgramData} programId={props.programId}/>
             }
         })
     }

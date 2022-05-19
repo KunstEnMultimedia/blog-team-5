@@ -22,7 +22,6 @@ const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) 
     const returnData = () => {
         if (jsonData.data != null && val != null){
             return jsonData.data.map((data, i ) => {
-                console.log(data);
                 var split = data.attributes.Title.toLowerCase().split(" ");
                 if (split.includes(val.toLowerCase())){
                     if (!filterBlog && !filterProgram){

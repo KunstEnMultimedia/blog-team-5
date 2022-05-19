@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import NavBar from "./NavBar"
-
+import { useState } from "react";
+import Hamburger from "./Hamburger";
 const Welcome = () => {
     return (
         <section className=" bg-homeImg h-screen w-100 bg-no-repeat flex flex-col items-center bg-cover">

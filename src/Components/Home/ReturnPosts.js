@@ -43,7 +43,7 @@ const ReturnPosts = (props) => {
             </nav>
             {returnData()}
             <div className="w-full h-44 flex justify-center items-center">
-                <Link to="/"><button className="w-52 h-12 bg-pink rounded-md font-barlow">LEES MEER</button></Link>              
+                <Link to="/nieuws"><button className="w-52 h-12 bg-pink rounded-md font-barlow">LEES MEER</button></Link>              
             </div>
         </section>)
     

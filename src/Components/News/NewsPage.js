@@ -1,11 +1,11 @@
 import NavBar from "../Home/NavBar"
 import ReturnNews from "./ReturnNews"
 
-const NewsPage = () => {
-    return <>
+const NewsPage = (props) => {
+    return <section className="bg-creme">
         <NavBar/>
-        <ReturnNews/>
-    </>
+        <ReturnNews setProfileId={props.setProfileId}/>
+    </section>
 }
 
 export default NewsPage

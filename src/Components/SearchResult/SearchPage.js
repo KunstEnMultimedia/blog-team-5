@@ -4,6 +4,7 @@ import HandleSearch from "./HandleSearch"
 import {useState} from 'react'
 
 const SearchPage = (props) => {
+    
     const [searchInput, setSearchInput] = useState('');
     const [filterProgram, setFilterProgram] = useState(false);
     const [filterBlog, setFilterBlog] = useState(false);

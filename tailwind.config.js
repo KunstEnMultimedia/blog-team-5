@@ -34,7 +34,8 @@ module.exports = {
           backgroundImage: { //TODO: add images to folder and list them here
               'homeImg' : "url('/src/images/good.png')",
               'searchIcon' : "url('/src/images/search.png')",
-              'closeIcon' : "url('/src/images/close.svg')"
+              'closeIcon' : "url('/src/images/close.svg')",
+              'hamIcon' : "url('/src/images/ham.svg')"
           },
           borderRadius: {
               'none': '0',

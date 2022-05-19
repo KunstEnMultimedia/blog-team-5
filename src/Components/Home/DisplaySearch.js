@@ -9,7 +9,7 @@ const DisplaySearch = ({setDisplaySearch , displaySearch}) => {
         setSearchInput(e.target.value);
       };
 
-    return <section className="bg-blue opacity-90 min-h-screen w-screen absolute left-0 top-0 flex ">
+    return <section className="bg-blue opacity-90 min-h-screen w-screen absolute left-0 top-0 flex z-50">
         <div className="w-screen flex justify-between flex-col">
             <div className="justify-end flex container mt-5 mx-auto">
                 <button onClick={() => {setDisplaySearch(!displaySearch)}} className="font-barlow text-black opacity-100 text-heading2 flex justify-end">x</button>

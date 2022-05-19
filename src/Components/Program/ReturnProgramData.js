@@ -4,8 +4,9 @@ import DisplayBigPost from './DisplayBigPost';
 import DisplayProgramData from "./DisplayProgramData";
 
 const ReturnProgramData = (props) => {
+    
     const [programData, setProgramData] = useState('');
-    console.log(props.test)
+    // console.log(props);
     const getData=()=>{
         fetch('program-blog.json'
         ,{
@@ -51,11 +52,11 @@ const ReturnProgramData = (props) => {
         }
     }
 
-    return <section className="flex justify-between w-full grid grid-cols-2 container mx-auto">
-        <section className="overflow-y-auto col-span-1 h-80vh scrollbar-hide">
+    return <section className="flex justify-between w-full grid grid-cols-2 container mx-auto lgMax:grid-cols-1">
+        <section className="overflow-y-auto col-span-1 h-80vh scrollbar-hide lgMax:col-span-1 lgMax:mt-10">
             {returnData()}
         </section>
-        <section className="col-span-1 h-80vh ">
+        <section className="col-span-1 h-80vh lgMax:hidden">
             {returnProgramPost()}
         </section>
     </section>
