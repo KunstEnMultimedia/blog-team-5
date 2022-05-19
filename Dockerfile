@@ -4,15 +4,15 @@ FROM node:16
 # Set working directory
 WORKDIR /home/node/app
 
+# Install serve
+RUN yarn global add serve
+
 # Copy package-lock.json & package.json to working directory
 COPY ./package-lock.json .
 COPY ./package.json .
 
 # Install dependencies
 RUN npm install
-
-# Install serve
-RUN npm i -g serve
 
 # Copy files to working directory
 COPY ./ .
@@ -21,4 +21,4 @@ COPY ./ .
 RUN npm run build
 
 # Serve app
-ENTRYPOINT [ "npx", "serve", "-s", "build", "-l", "80" ]
+ENTRYPOINT [ "serve", "-s", "build", "-l", "80" ]
