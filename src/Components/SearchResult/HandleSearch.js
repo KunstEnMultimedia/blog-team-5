@@ -10,7 +10,7 @@ const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) 
     const [jsonData, setJsonData] = useState('');
   
     async function getData(){
-        const response = await fetch("http://188.166.200.41/api/blog-posts?populate=*");
+        const response = await fetch("https://admin.impresshub.nl/api/blog-posts?populate=*");
         const data = await response.json();
         setJsonData(data);
     }
@@ -32,11 +32,6 @@ const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) 
                     } else if (filterProgram && !filterBlog){
                         if (data.attributes.Category.Category == 'Event')
                         return <DisplaySearchResults data={data} key={i} setProfileId={setProfileId} setProgramId={setProgramId}/>
-                    }
-                } else {
-                    if (i < 1){
-                        
-                        return <h1 className="font-barlow text-heading6">Er waren geen zoekresulaten... Probeer het nog eens</h1>
                     }
                 }
             })

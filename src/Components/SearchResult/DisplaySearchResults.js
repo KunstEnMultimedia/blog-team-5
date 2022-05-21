@@ -3,8 +3,15 @@ import { useState, useEffect } from 'react';
 
 const DisplaySearchResults = (props) => {
 
-    const host = 'http://188.166.200.41';
+    const host = 'https://admin.impresshub.nl';
     const date = props.data.attributes.publishedAt.split("T");
+    let text = props.data.attributes.Description;
+
+
+    if (text.length > 192){
+        text = text.slice(0,192) + "...";
+    }
+
     let link;
 
     if (props.data.attributes.Category.Category == 'Event'){
@@ -27,11 +34,11 @@ const DisplaySearchResults = (props) => {
             <div>
                 <h1 className="font-barlow font-bold text-heading4">{props.data.attributes.Title}</h1>
                 <div className="flex flex-row gap-3">
-                    <p className="text-pink font-bold font-barlow w-4/6">{props.data.attributes.Category.Study}</p> 
+                    <p className="text-pink font-bold font-barlow w-4/6">{props.data.attributes.Category.Category}</p> 
                     <p className="font-barlow">{date[0]}</p>
                 </div>
             </div>
-            <p className="hover:text-blue">{props.data.attributes.Description}</p>
+            <p className="hover:text-blue">{text}</p>
             </Link>                   
     </div>
 }

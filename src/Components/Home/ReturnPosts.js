@@ -6,18 +6,24 @@ const ReturnPosts = (props) => {
 
     const [jsonData, setJsonData] = useState('');
 
-    const getData=()=>{
-        fetch('mock-blog.json'
-        ,{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        }
-        )
-        .then(function(response) {return (response.json())})
-        .then(function(myJson) {setJsonData(myJson)});
+    // const getData=()=>{
+    //     fetch('mock-blog.json'
+    //     ,{
+    //         headers : { 
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //         }
+    //     }
+    //     )
+    //     .then(function(response) {return (response.json())})
+    //     .then(function(myJson) {setJsonData(myJson)});
 
+    // }
+
+    async function getData(){
+        const response = await fetch("https://admin.impresshub.nl/api/blog-posts?populate=*");
+        const data = await response.json();
+        setJsonData(data);
     }
 
     useEffect(()=>{
@@ -26,13 +32,15 @@ const ReturnPosts = (props) => {
 
     const returnData = () => {
        
-        if (jsonData.posts != null){
-            return jsonData.posts.map((data, i) => { 
-                if (i < 9 && jsonData.posts.length >= 9){
+        if (jsonData.data != null){
+            return jsonData.data.map((data, i) => { 
+                if(data.attributes.Category.Category == 'Post'){
+                if (i < 9 && jsonData.data.length >= 9){
                     return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
-                } else if (jsonData.posts.length < 9){
+                } else if (jsonData.data.length < 9){
                     return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/> 
                 }
+            }
             })
         }
     }

@@ -5,75 +5,59 @@ import './button.css';
 const ReturnNews = (props) => {
 
 
-    let postsDisplayed = 6;
+    let postsDisplayed = 9;
     const [page, setPage] =  useState(1);
     const [postNumber, setPostNumber] = useState(postsDisplayed);
 
     localStorage.setItem('postnumber' , postNumber);
     localStorage.setItem('page' , page);
 
-    // const [jsonData, setJsonData] = useState('');
-
-    // async function getData(){
-    //     const response = await fetch("http://188.166.200.41/api/blog-posts?populate=*");
-    //     const data = await response.json();
-    //     setJsonData(data);
-    // }
-
-    // useEffect(()=>{
-    //     getData()
-    // },[])
-
-    // const returnData = () => {
-    //     if (jsonData.data != null){
-    //         return jsonData.data.map((data, i ) => {
-    //             return <DisplayNews data={data} key={i}/>
-    //         })
-    //     }
-    // }
-    
-    
-    // return <>{returnData()}</>
-
     const [jsonData, setJsonData] = useState('');
 
-    const getData=()=>{
-        fetch('mock-blog.json'
-        ,{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        }
-        )
-        .then(function(response) {return (response.json())})
-        .then(function(myJson) {setJsonData(myJson)});
-
+    
+    async function getData(){
+        const response = await fetch("https://admin.impresshub.nl/api/blog-posts?populate=*");
+        const data = await response.json();
+        setJsonData(data);
     }
 
-    
     useEffect(()=>{
         getData()
     },[])
 
+    const postdata = jsonData.data;
+    var arr =[];
+    if (jsonData.data != null){
+        for(var i = 0; i < postdata.length;i++){
+            if (postdata[i].attributes.Category.Category.includes('Post')){
+                
+                arr.push(postdata[i]);
+            }
+        }
+    }   
+
     const returnData = () => {
        
-        if (jsonData.posts != null){
-            return jsonData.posts.map((data, i) => { 
+        if (arr != null){
+            return arr.map((data, i) => { 
                 if (i < postNumber && i >= postNumber - postsDisplayed){
                     return <DisplayNews data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
-                }
+                }        
             })
         }
-    }
+    } 
 
-    if (jsonData.posts != null){
-        var lastPage = jsonData.posts.length;
-        if ((lastPage/postsDisplayed) % 2 == 0){
-            lastPage/=postsDisplayed
-        }else {
+
+
+    if (jsonData.data != null){
+
+        var lastPage = arr.length;
+        if (lastPage/postsDisplayed % 2 == 0 || lastPage % 2 == 0){
             lastPage = Math.round((lastPage/postsDisplayed))
-        }
+        }else{
+            lastPage = Math.round((lastPage/postsDisplayed)) + 1;
+        } 
+
     }
    
     return <section className="f">

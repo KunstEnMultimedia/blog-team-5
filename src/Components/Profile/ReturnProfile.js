@@ -7,7 +7,7 @@ const ReturnProfile = (props) => {
     const [profileData, setProfileData] = useState('');
     
     const getData=()=>{
-        fetch('mock-blog.json'
+        fetch('https://admin.impresshub.nl/api/blog-posts?populate=*'
         ,{
             headers : { 
             'Content-Type': 'application/json',
@@ -26,9 +26,9 @@ const ReturnProfile = (props) => {
     
         const returnData = () => {
     
-            if (profileData.posts != null){
+            if (profileData.data != null){
     
-                return profileData.posts.map((data, i) => {
+                return profileData.data.map((data, i) => {
                     if (localStorage.getItem('personProfile') == data.id){
                         return <DisplayProfile data={data} key={i}/>  
                     }
