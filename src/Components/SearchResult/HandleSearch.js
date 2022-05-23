@@ -5,7 +5,13 @@ import DisplaySearchResults from './DisplaySearchResults';
 const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) => {
 
     const location = useLocation();
-    const val = location.state;
+    var val = location.state;
+
+    if (val == null){
+        val = localStorage.getItem('bigSearchResult');
+    }
+    
+    localStorage.setItem('bigSearchResult' , val);
 
     const [jsonData, setJsonData] = useState('');
   
@@ -40,7 +46,7 @@ const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) 
     
 
     return <>
-    {returnData() != null ? returnData() : <h1 className="font-barlow text-heading6"> Er waren geen zoekresulaten... Probeer het nog eens</h1> }
+    {returnData()}
     </>
 }
 export default HandleSearch

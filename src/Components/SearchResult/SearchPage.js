@@ -9,8 +9,17 @@ const SearchPage = (props) => {
     const [filterProgram, setFilterProgram] = useState(false);
     const [filterBlog, setFilterBlog] = useState(false);
 
+    // if (localStorage.getItem('bigSearchResult') != ''){
+    //     setSearchInput(localStorage.getItem('bigSearchResult'));
+       
+    // }
     const handleChange = (e) => {
+        if (e.target.value != ''){
         setSearchInput(e.target.value);
+        } else {
+            setSearchInput(localStorage.getItem('bigSearchResult'));
+        }
+        // localStorage.setItem('bigSearchResult' , e.target.value);
       };
 
     return <section className="bg-creme h-screen">

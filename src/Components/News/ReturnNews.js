@@ -27,6 +27,7 @@ const ReturnNews = (props) => {
 
     const postdata = jsonData.data;
     var arr =[];
+    
     if (jsonData.data != null){
         for(var i = 0; i < postdata.length;i++){
             if (postdata[i].attributes.Category.Category.includes('Post')){

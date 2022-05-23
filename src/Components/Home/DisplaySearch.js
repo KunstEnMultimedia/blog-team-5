@@ -6,8 +6,12 @@ const DisplaySearch = ({setDisplaySearch , displaySearch}) => {
     const [searchInput, setSearchInput] = useState('');
 
     const handleChange = (e) => {
+        if (e.target.value != ''){
         setSearchInput(e.target.value);
+        }
       };
+
+    localStorage.setItem('bigSearchResult', searchInput);
 
     return <section className="bg-blue opacity-90 min-h-screen w-screen absolute left-0 top-0 flex z-50">
         <div className="w-screen flex justify-between flex-col">
