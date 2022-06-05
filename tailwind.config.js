@@ -35,7 +35,8 @@ module.exports = {
               'homeImg' : "url('/src/images/good.png')",
               'searchIcon' : "url('/src/images/search.png')",
               'closeIcon' : "url('/src/images/close.svg')",
-              'hamIcon' : "url('/src/images/ham.svg')"
+              'hamIcon' : "url('/src/images/ham.svg')",
+            //   'filter' : "url('/src/images/filter.png')"
           },
           borderRadius: {
               'none': '0',
@@ -55,6 +56,7 @@ module.exports = {
               '19rem' : '19rem',
               '80vh' : '80vh',
               '60vh' : '60vh',
+              '220px' : '220px',
           },
           width: {
               '86' : '22rem',

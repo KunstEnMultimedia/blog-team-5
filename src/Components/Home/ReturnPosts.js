@@ -5,23 +5,10 @@ import DisplayPosts from './DisplayPosts';
 const ReturnPosts = (props) => {
 
     const [jsonData, setJsonData] = useState('');
-
-    // const getData=()=>{
-    //     fetch('mock-blog.json'
-    //     ,{
-    //         headers : { 
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json'
-    //         }
-    //     }
-    //     )
-    //     .then(function(response) {return (response.json())})
-    //     .then(function(myJson) {setJsonData(myJson)});
-
-    // }
-
+    const postDisplay = 6;
+    
     async function getData(){
-        const response = await fetch("https://admin.impresshub.nl/api/blog-posts?populate=*");
+        const response = await fetch("https://admin.impresshub.nl/api/blog-posts?populate=Author.Picture,Author.Class,Class,Thumbnail");
         const data = await response.json();
         setJsonData(data);
     }
@@ -34,13 +21,13 @@ const ReturnPosts = (props) => {
        
         if (jsonData.data != null){
             return jsonData.data.map((data, i) => { 
-                if(data.attributes.Category.Category == 'Post'){
-                if (i < 9 && jsonData.data.length >= 9){
+                // if(data.attributes.Category.Category == 'Post'){
+                if (i < postDisplay && jsonData.data.length >= postDisplay){
                     return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/>   
-                } else if (jsonData.data.length < 9){
+                } else if (jsonData.data.length < postDisplay){
                     return <DisplayPosts data={data} key={i} index={i} setProfileId={props.setProfileId}/> 
                 }
-            }
+            // }
             })
         }
     }

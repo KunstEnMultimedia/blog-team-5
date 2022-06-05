@@ -12,7 +12,7 @@ const DisplayRecommended = (props) => {
             <Link to="/profile" onClick={() => {props.setProfileId(props.index)}}>
                 <div className="container mx-auto w-11/12 h-full flex flex-col pt-3">
                 <div className="font-barlow font-bold mb-1">
-                    <h1 className="text-pink ">{props.data.attributes.Category.Category}</h1>
+                    <h1 className="text-pink ">{props.data.attributes.Category}</h1>
                     <h1 className="xlMax:text-heading6">{props.data.attributes.Title}</h1>
                 </div>
                

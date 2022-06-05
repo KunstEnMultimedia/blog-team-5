@@ -7,18 +7,23 @@ const ReturnProgramData = (props) => {
     
     const [programData, setProgramData] = useState('');
     // console.log(props);
-    const getData=()=>{
-        fetch('program-blog.json'
-        ,{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        }
-        )
-        .then(function(response) {return (response.json())})
-        .then(function(myJson) {setProgramData(myJson)});
+    // const getData=()=>{
+    //     fetch('program-blog.json'
+    //     ,{
+    //         headers : { 
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //         }
+    //     }
+    //     )
+    //     .then(function(response) {return (response.json())})
+    //     .then(function(myJson) {setProgramData(myJson)});
 
+    // }
+    async function getData(){
+        const response = await fetch("https://admin.impresshub.nl/api/blog-events?populate=*");
+        const data = await response.json();
+        setProgramData(data);
     }
 
     useEffect(()=>{
@@ -36,16 +41,16 @@ const ReturnProgramData = (props) => {
 
     const returnData = () => {
 
-        if (programData.program != null){
-            return programData.program.map((data, i) => {
+        if (programData.data != null){
+            return programData.data.map((data, i) => {
                 return <DisplayProgramData data={data} key={i} index={i} setProgramId={props.setProgramId}/>   
             })
         }
     }
 
     const returnProgramPost = () => {
-        if(programData.program != null){
-            let BigPost = randomGenerator(programData.program , 1);
+        if(programData.data != null){
+            let BigPost = randomGenerator(programData.data , 1);
             return BigPost.map((data, i) => {
                 return <DisplayBigPost data={data} key={i} setProgramId={props.setProgramId}/>
             })

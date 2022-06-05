@@ -5,7 +5,7 @@ const RecommendedProgram = (props) => {
     const [recData, setRecData] = useState('');
     
     const getData=()=>{
-        fetch('program-blog.json'
+        fetch('https://admin.impresshub.nl/api/blog-events?populate=*'
         ,{
             headers : { 
             'Content-Type': 'application/json',
@@ -32,9 +32,9 @@ const RecommendedProgram = (props) => {
     }
 
     const returnRecommended = () => {
-        if (recData.program != null){
+        if (recData.data != null){
             
-            let filteredArr = randomGenerator(recData.program, 3);
+            let filteredArr = randomGenerator(recData.data, 3);
             return filteredArr.map((data, i) => {
                 return <DisplayRecProgram data={data} key={i} setProgramId={props.setProgramId} index={data.id}/>                   
             })

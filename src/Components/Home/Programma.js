@@ -7,18 +7,10 @@ const Programma = (props) => {
 
     const [programData, setProgramData] = useState('');
 
-    const getData=()=>{
-        fetch('program-blog.json'
-        ,{
-            headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-            }
-        }
-        )
-        .then(function(response) {return (response.json())})
-        .then(function(myJson) {setProgramData(myJson)});
-
+    async function getData(){
+        const response = await fetch("https://admin.impresshub.nl/api/blog-events?populate=*");
+        const data = await response.json();
+        setProgramData(data);
     }
 
     useEffect(()=>{
@@ -27,11 +19,11 @@ const Programma = (props) => {
 
     const returnData = () => {
 
-        if (programData.program != null){
-            return programData.program.map((data, i) => {
-                if (i < 3 && programData.program.length >= 3){
+        if (programData.data != null){
+            return programData.data.map((data, i) => {
+                if (i < 3 && programData.data.length >= 3){
                 return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId}/>   
-                } else if (programData.program.length < 3){
+                } else if (programData.data.length < 3){
                     return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId}/>   
                 }
             })

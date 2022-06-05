@@ -4,9 +4,15 @@ const DisplayProfile = (props) => {
         
     const host = "https://admin.impresshub.nl";
 
+    var text = props.data.attributes.Content;
+    // if (text.includes("\\n")){
+    //     // text.split("\n")
+    //     console.log(text);
+    // }
+    console.log(text);
     return (
         <section> 
-        <img src={host + props.data.attributes.Thumbnail.data.attributes.url} className="w-full h-36rem object-cover"/>
+        <img src={host + props.data.attributes.Thumbnail.data.attributes.url} className="w-full h-36rem object-cover smMax:h-80 smMax:pt-3"/>
             <div className="container mx-auto w-9/12 mt-8">
                 <div className="flex flex-col justify-between mb-5">
                     <h2 className="text-pink text-heading3 font-bold xsMax:h-1/4 ">{props.data.attributes.Title}</h2>
