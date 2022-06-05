@@ -33,8 +33,8 @@ const DisplaySearchResults = (props) => {
         }
     }
 
-    return <div className="bg-white h-56 mb-5 flex 2xl:w-11/12 w-12/12 mdMax:flex-col mdMax:h-76 smMax:h-80">
-        <img src={thumbnail} className="object-cover w-2/6 h-full mdMax:w-full mdMax:h-2/4 smMax:h-3/4"/>
+    return <div className="bg-white h-52 mb-5 flex 2xl:w-11/12 w-10/12 mdMax:flex-col mdMax:h-76 smMax:h-80">
+        <img src={thumbnail} className="object-cover w-2/6 h-52 mdMax:w-full mdMax:h-2/4 smMax:h-3/4"/>
         <Link to={link} onClick={linkTo()} className="flex flex-col justify-evenly w-7/12 mx-auto mdMax:w-11/12">
             <div>
                 <h1 className="font-barlow font-bold text-heading4 mdMax:text-heading5">{props.data.attributes.Title}</h1>
@@ -43,7 +43,7 @@ const DisplaySearchResults = (props) => {
                     {/* <p className="font-barlow">{date[0]}</p> */}
                 </div>
             </div>
-            <p className="hover:text-blue mdMax:hidden">{text}</p>
+            <p className="hover:text-blue mdMax:hidden mdMid:hidden">{text}</p>
             </Link>                   
     </div>
 
