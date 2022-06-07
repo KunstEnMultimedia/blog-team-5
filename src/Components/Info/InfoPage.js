@@ -1,10 +1,10 @@
 import NavBar from "../Home/NavBar"
-import DisplayInfo from "./DisplayInfo"
+import NotFound from "../notFound/NotFound"
 
 const InfoPage = () => {
     return <>
-        <NavBar/>
-        <DisplayInfo/>
+
+        <NotFound/>
     </>
 }
 

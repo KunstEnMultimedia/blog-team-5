@@ -17,7 +17,7 @@ const NavBar = () => {
                 <Link to="/info">INFO</Link>
                 <Link to="/nieuws">NIEUWS</Link>
                 <Link to="/programma">PROGRAMMA</Link>
-                <Link to="/">CONTACT</Link>
+                <Link to="/contact">CONTACT</Link>
                 <img className="bg-searchIcon h-8 w-8 bg-no-repeat bg-cover static border-hidden" onClick={() => setDisplaySearch(!displaySearch)} displaySearch={displaySearch}/>
                 {displaySearch && <DisplaySearch setDisplaySearch={setDisplaySearch} displaySearch={displaySearch}/>}
             </div>

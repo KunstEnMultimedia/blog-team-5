@@ -11,7 +11,7 @@ import ProgramPostPage from './Components/ProgramPost/ProgramPostPage';
 import DisplaySearchResults from './Components/SearchResult/DisplaySearchResults';
 import HandleSearch from './Components/SearchResult/HandleSearch';
 import SearchPage from './Components/SearchResult/SearchPage';
-
+import NotFound from "./Components/notFound/NotFound"
 
 function App() {
   
@@ -36,6 +36,7 @@ function App() {
             <Route path="/info" element={<InfoPage/>}/>
             <Route path="/nieuws" element={<NewsPage setProfileId={setProfileId}/>}/>
             <Route path="/search" element={<SearchPage setProgramId={setProgramId} setProfileId={setProfileId}/>}/>
+            <Route path='/contact' element={<NotFound/>}/>
         </Routes>
     </>)
 }
