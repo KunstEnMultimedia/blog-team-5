@@ -1,5 +1,9 @@
 # Getting Started with Create React App
 
+## About
+
+This project was made for students of Noorderpoort to post blog posts on. Sadly it was never finished due to budget reasons.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
