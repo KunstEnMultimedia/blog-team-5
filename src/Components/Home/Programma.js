@@ -22,9 +22,9 @@ const Programma = (props) => {
         if (programData.data != null){
             return programData.data.map((data, i) => {
                 if (i < 3 && programData.data.length >= 3){
-                return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId}/>   
+                return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId} dates={data.attributes.Dates[0].Date}/>   
                 } else if (programData.data.length < 3){
-                    return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId}/>   
+                    return <DisplayProgram data={data} key={i} index={i} setProgramId={props.setProgramId} dates={data.attributes.Dates[0].Date}/>   
                 }
             })
         }

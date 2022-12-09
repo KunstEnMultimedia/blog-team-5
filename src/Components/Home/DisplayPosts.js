@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, Route } from "react-router-dom"
 
 const DisplayPosts = (props) => {
 
     const host = "https://admin.impresshub.nl";
 
+
     return (
         <div className="bg-white w-86 mb-9 rounded-xl 2xl:w-3/12 2xl:mx-1 ">
             <img src={host + props.data.attributes.Thumbnail.data.attributes.url} className="rounded-t-xl h-220px w-full object-cover "/>
-                <Link to="/profile" className="flex justify-between flex-col h-96 w-10/12 mx-auto" onClick={() => {props.setProfileId(props.data.id)}}>
+                <Link to='/profile' className="flex justify-between flex-col h-96 w-10/12 mx-auto" onClick={() => {props.setProfileId(props.data.id)}}>
                     <div className="mt-4">
                         <div className="mb-2">
                             {/* <h5 className="font-barlow font-bold text-red">{props.data.attributes.Category}</h5> */}
@@ -23,6 +24,7 @@ const DisplayPosts = (props) => {
                                 <p className="font-montserrat ">{props.data.attributes.Class.Class}</p>
                             </div>
                     </div>
+                {/* </Route> */}
                 </Link>
         </div>
         )

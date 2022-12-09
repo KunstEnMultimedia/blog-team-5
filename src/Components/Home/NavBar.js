@@ -22,7 +22,7 @@ const NavBar = () => {
                 {displaySearch && <DisplaySearch setDisplaySearch={setDisplaySearch} displaySearch={displaySearch}/>}
             </div>
             <div className="lg:hidden flex justify-center self-center w-3/12 flex-col">
-                <img className="bg-hamIcon h-10 w-12 bg-cover bg-no-repeat searchicon" onClick={() => setHamburgerIcon(!hamburgerIcon)}/>
+                <img className="bg-hamIcon h-10 w-12 bg-cover bg-no-repeat " onClick={() => setHamburgerIcon(!hamburgerIcon)}/>
             </div>
         </nav>
         {hamburgerIcon && <Hamburger hamburgerIcon={hamburgerIcon} setHamburgerIcon={setHamburgerIcon}/>}

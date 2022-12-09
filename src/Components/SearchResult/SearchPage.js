@@ -25,17 +25,6 @@ const SearchPage = (props) => {
                 <div className=" w-9/12 h-20 flex justify-start items-center gap-4 mdMax:w-full smMax:justify-center">
                     <input type="text" className="h-2/4 w-6/12 border-b-4 border-pink font-barlow rounded-sm bg-creme text-heading6 placeholder:text-black" onChange={handleChange} placeholder="Zoeken.."/>
                     <Link to="/search" state={searchInput} className="h-2/4"><button type="submit" className="w-24 bg-pink h-full font-bold font-barlow text-heading6 text-creme">ZOEK</button></Link>
-                    {/* <section  className="sm:hidden h-full items-center justify-center bg-red flex flex-col">
-                        <div className="items-center justify-center flex flex-col">
-                            <button className="font-bold font-barlow text-heading5 cursor-pointer" onClick={() => setFilterRes(!filterRes)}>FILTERS</button>
-                        </div>
-                {filterRes && 
-                    <div className="flex flex-col items-start h-20 bg-white gap-3 justify-between w-full">
-                        <Link to="/search" className="h-16 w-6/12 mdMax:w-10/12" state={searchInput}><button className="h-full w-full font-barlow text-creme font-bold text-heading6 bg-pink" style={filterProgram ? {background : '#E05596', border : '5px solid #F27DB4'} : {background : '#F27DB4'}} onClick={() => {setFilterProgram(!filterProgram)}}>EVENTS</button></Link>
-                        <Link to="/search"className="h-16 w-6/12 mdMax:w-10/12" state={searchInput}><button className="h-full w-full bg-blue font-barlow text-creme font-bold text-heading6" style={filterBlog ? {background : '#1B84B2', border : '5px solid #04B1D9'} : {background : '#04B1D9'}} onClick={() => {setFilterBlog(!filterBlog)}}>BLOG</button></Link>
-                    </div>
-                }
-                </section> */}
                 </div>
              
                 <div className="w-10/12 flex justify-start flex-col h-36rem overflow-y-auto">

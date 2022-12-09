@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './Components/Home/HomePage';
 import InfoPage from './Components/Info/InfoPage';
@@ -18,13 +18,14 @@ function App() {
     const [profileId, setProfileId] = useState('');
     const [programId, setProgramId] = useState('');
 
-    if(profileId != ''){
+    if (profileId != ''){
         localStorage.setItem('personProfile' , profileId);
     }
     
     if(programId != ''){
         localStorage.setItem('programId' , programId);
     }
+    
 
     return (
     <>

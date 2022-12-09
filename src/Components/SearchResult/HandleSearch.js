@@ -54,6 +54,7 @@ const HandleSearch = ({setProfileId ,setProgramId , filterBlog, filterProgram}) 
                 }
             })
         }
+
         if (eventData.data != null && val != null){
             eventData.data.forEach((data, i) => {
                 var low = data.attributes.Title.toLowerCase();

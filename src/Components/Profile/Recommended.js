@@ -5,7 +5,7 @@ const Recommended = (props) => {
 
     const [recData, setRecData] = useState('');
     
-    const getData=()=>{
+    const getData = () =>{
         fetch('https://admin.impresshub.nl/api/blog-posts?populate=*'
         ,{
             headers : { 
@@ -34,12 +34,9 @@ const Recommended = (props) => {
 
     const returnRecommended = () => {
         if (recData.data != null){
-            
             let filteredArr = randomGenerator(recData.data, 3);
             return filteredArr.map((data, i) => {
-                // if(filteredArr[i].attributes.Category.Category == 'Post'){
-                return <DisplayRecommended data={data} key={i} setProfileId={props.setProfileId} index={data.id}/>          
-                // }         
+                return <DisplayRecommended data={data} key={i} setProfileId={props.setProfileId} index={data.id}/>            
             })
         }
     }

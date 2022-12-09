@@ -6,20 +6,7 @@ import DisplayProgramData from "./DisplayProgramData";
 const ReturnProgramData = (props) => {
     
     const [programData, setProgramData] = useState('');
-    // console.log(props);
-    // const getData=()=>{
-    //     fetch('program-blog.json'
-    //     ,{
-    //         headers : { 
-    //         'Content-Type': 'application/json',
-    //         'Accept': 'application/json'
-    //         }
-    //     }
-    //     )
-    //     .then(function(response) {return (response.json())})
-    //     .then(function(myJson) {setProgramData(myJson)});
 
-    // }
     async function getData(){
         const response = await fetch("https://admin.impresshub.nl/api/blog-events?populate=*");
         const data = await response.json();
@@ -30,7 +17,7 @@ const ReturnProgramData = (props) => {
         getData()
     },[])
 
-    const randomGenerator = (arr , num = 1) => {
+    const randomGenerator = (arr, num = 1) => {
         const res = [];
         for (let i = 0; i < num; i++){
             const random = Math.floor(Math.random() * arr.length);

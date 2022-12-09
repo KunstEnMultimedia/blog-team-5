@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Dates from "../Functions/Dates"
 
 const page404 = () => {
     return <section className="bg-404Icon h-screen w-full bg-no-repeat bg-cover flex justify-center items-center">
@@ -12,7 +13,6 @@ const page404 = () => {
                 <div className="pt-8">
                     <Link to="/"><button className="bg-white h-10 w-40 rounded-lg">Terug naar home</button></Link>
                 </div>
-
         </div>
         </div>
     </section>

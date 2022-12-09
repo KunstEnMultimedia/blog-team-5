@@ -3,7 +3,17 @@ import { Link } from "react-router-dom"
 const DisplayNews = (props) => {
     
     const host = "https://admin.impresshub.nl";
-    
+    let author = props.data.attributes.Author.data;
+    let name;
+    let profilePicture;
+    if (author != null) {
+        name = props.data.attributes.Author.data.attributes.Name;
+        profilePicture = host + props.data.attributes.Author.data.attributes.Picture.data.attributes.url;
+    } else {
+        name = '';
+        profilePicture = null;
+    }
+
     return (
         <div className="bg-white w-86 mb-9 rounded-xl 2xl:w-3/12 2xl:mx-1 ">
             <img src={host + props.data.attributes.Thumbnail.data.attributes.url} className="rounded-t-xl h-220px w-full object-cover "/>
@@ -16,16 +26,15 @@ const DisplayNews = (props) => {
                         <p className="hover:text-blue font-barlow">{props.data.attributes.Description}</p>
                     </div>
                     <div className="flex items-center pb-3">
-                    <img className="object-cover rounded-full w-14 h-14 " src={host + props.data.attributes.Author.data.attributes.Picture.data.attributes.url}/>
-                        {/* <img className="object-cover rounded-full w-14 h-14 " src={props.data.profilePic}/> */}
-                            <div className="ml-3">
-                                <p className="font-bold font-barlow">{props.data.attributes.Author.data.attributes.Name}</p>
-                                <p className="font-montserrat ">{props.data.attributes.Class.Class}</p>
-                            </div>
+                    <img className="object-cover rounded-full w-14 h-14 " src={profilePicture}/>
+                        <div className="ml-3">
+                            <p className="font-bold font-barlow">{name}</p>
+                            <p className="font-montserrat ">{props.data.attributes.Class.Class}</p>
+                        </div>
                     </div>
                 </Link>
         </div>
-        )
+    )
 }
 
 export default DisplayNews

@@ -14,7 +14,7 @@ const ProfilePage = (props) => {
 
       
     return (<section>
-    <NavBar/>
+        <NavBar/>
         <ReturnProfile profileId={props.profileId} setProfileId={props.setProfileId}/>
         <Recommended profileId={props.profileId} setProfileId={props.setProfileId}/>
     </section>)

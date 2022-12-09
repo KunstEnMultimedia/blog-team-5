@@ -36,7 +36,8 @@ module.exports = {
               'searchIcon' : "url('/src/images/search.png')",
               'closeIcon' : "url('/src/images/close.svg')",
               'hamIcon' : "url('/src/images/ham.svg')",
-              '404Icon' : "url('/src/images/404.png')"
+              '404Icon' : "url('/src/images/404.png')",
+              'testimg' : "url('/src/images/pexels1.png')"
           },
           borderRadius: {
               'none': '0',
